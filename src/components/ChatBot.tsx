@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -27,6 +27,17 @@ export const ChatBot = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to bottom when messages change
+  useEffect(() => {
+    if (scrollAreaRef.current) {
+      const scrollContainer = scrollAreaRef.current.querySelector('[data-radix-scroll-area-viewport]');
+      if (scrollContainer) {
+        scrollContainer.scrollTop = scrollContainer.scrollHeight;
+      }
+    }
+  }, [messages, isLoading]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -116,7 +127,7 @@ export const ChatBot = () => {
           
           <CardContent className="flex flex-col h-full p-0">
             {/* Messages */}
-            <ScrollArea className="flex-1 p-4">
+            <ScrollArea ref={scrollAreaRef} className="flex-1 p-4">
               <div className="space-y-4">
                 {messages.map((message) => (
                   <div
