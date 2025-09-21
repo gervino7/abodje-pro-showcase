@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Design System - Stunning Modern Theme */
+/* Portfolio Design System - Premium Blue & Gold Theme */
 
 @layer base {
   :root {
@@ -10,22 +10,20 @@
     --background: 0 0% 100%;
     --foreground: 215 28% 17%;
 
-    /* Modern Vibrant Brand Colors */
-    --primary: 200 100% 55%; /* Brilliant Cyan #00BFFF */
+    /* Portfolio Brand Colors */
+    --primary: 217 91% 35%; /* Deep Blue #0D47A1 */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 200 100% 65%;
-    --primary-dark: 200 100% 45%;
-    --primary-glow: 200 100% 75%;
+    --primary-light: 217 91% 45%;
+    --primary-dark: 217 91% 25%;
 
-    /* Purple-Pink Accent System */
-    --accent: 280 100% 70%; /* Vibrant Purple #B347D9 */
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 280 100% 80%;
-    --accent-hover: 290 100% 65%;
-    --accent-coral: 340 80% 65%; /* Coral Pink #E879B9 */
+    /* Golden Accent */
+    --accent: 51 100% 50%; /* Gold #FFD700 */
+    --accent-foreground: 215 28% 17%;
+    --accent-light: 51 100% 60%;
+    --accent-hover: 45 93% 47%; /* FBBF24 */
 
-    /* Secondary Gradient Colors */
-    --secondary: 220 14% 96%;
+    /* Neutral Palette */
+    --secondary: 220 14% 96%; /* Light Gray #F3F4F6 */
     --secondary-foreground: 215 28% 17%;
     --muted: 220 14% 96%;
     --muted-foreground: 215 20% 65%;
@@ -41,22 +39,17 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 200 100% 55%;
+    --ring: 217 91% 35%;
 
-    /* Stunning Modern Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(200 100% 55%) 0%, hsl(280 100% 70%) 100%);
-    --gradient-chat: linear-gradient(135deg, hsl(200 100% 60%) 0%, hsl(280 100% 65%) 50%, hsl(340 80% 65%) 100%);
-    --gradient-button: linear-gradient(135deg, hsl(200 100% 55%) 0%, hsl(280 100% 70%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(280 100% 70%) 0%, hsl(340 80% 65%) 100%);
+    /* Premium Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 35%) 0%, hsl(217 91% 45%) 100%);
     --gradient-section: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(45 93% 47%) 100%);
     
-    /* Premium Shadows & Glows */
-    --shadow-elegant: 0 10px 30px -10px hsl(200 100% 55% / 0.4);
-    --shadow-glow: 0 0 40px hsl(200 100% 75% / 0.6);
-    --shadow-purple: 0 10px 30px -10px hsl(280 100% 70% / 0.4);
-    --shadow-card: 0 4px 20px -2px hsl(200 100% 55% / 0.15);
-    --shadow-chat: 0 8px 32px -8px hsl(280 100% 70% / 0.3);
+    /* Shadows & Effects */
+    --shadow-elegant: 0 10px 30px -10px hsl(217 91% 35% / 0.3);
+    --shadow-gold: 0 5px 20px -5px hsl(51 100% 50% / 0.4);
+    --shadow-card: 0 4px 20px -2px hsl(217 91% 35% / 0.1);
 
     /* Animation Variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
