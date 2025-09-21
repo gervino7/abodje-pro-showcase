@@ -35,44 +35,47 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-section">
-      <div className="container px-4">
-        
+    <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      {/* Background Animation */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.3),transparent_50%)] animate-pulse-glow" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,215,0,0.15),transparent_50%)]" />
+      
+      <div className="container px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <Badge variant="outline" className="mb-4 px-4 py-2 border-primary text-primary">
+          <div className="professional-tag inline-flex items-center mb-4">
             <Award className="h-4 w-4 mr-2" />
             À Propos
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold font-poppins text-foreground mb-6">
-            Profil <span className="text-accent">Professionnel</span>
+          </div>
+          <h2 className="hero-title text-4xl md:text-5xl text-white mb-6">
+            Profil <span className="text-gradient-gold">Professionnel</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-gold mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto rounded-full shadow-gold" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           
           {/* Bio Section */}
           <div className="animate-slide-up">
-            <Card className="border-0 shadow-card bg-card/50 backdrop-blur-sm">
+            <Card className="border-0 shadow-elegant bg-white/10 backdrop-blur-md border border-white/20">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold font-poppins text-foreground mb-6 flex items-center">
-                  <Lightbulb className="h-6 w-6 text-accent mr-3" />
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <Lightbulb className="h-6 w-6 text-yellow-400 mr-3" />
                   Vision & Expertise
                 </h3>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <div className="space-y-4 text-white/90 leading-relaxed text-base">
                   <p>
-                    Informaticien passionné avec plus de <span className="text-accent font-semibold">10 ans d'expérience</span> 
+                    Informaticien passionné avec plus de <span className="text-yellow-400 font-semibold">10 ans d'expérience</span> 
                     dans le développement d'applications et le conseil technologique, je transforme les idées en solutions 
                     numériques performantes.
                   </p>
                   <p>
                     Ma formation internationale et ma maîtrise des technologies modernes me permettent d'offrir 
-                    une <span className="text-primary font-semibold">approche créative et adaptable</span> pour 
+                    une <span className="text-blue-300 font-semibold">approche créative et adaptable</span> pour 
                     résoudre les défis les plus complexes.
                   </p>
                   <p>
-                    Chez <span className="text-accent font-semibold">D&G CONSEIL</span>, je développe des stratégies 
+                    Chez <span className="text-yellow-400 font-semibold">D&G CONSEIL</span>, je développe des stratégies 
                     innovantes qui allient expertise technique et vision business pour maximiser l'impact des projets digitaux.
                   </p>
                 </div>
@@ -82,11 +85,11 @@ export const AboutSection = () => {
             {/* Compétences */}
             <div className="grid grid-cols-2 gap-4 mt-8">
               {competences.map((comp, index) => (
-                <Card key={index} className="border-0 shadow-card hover:shadow-gold transition-all duration-300 group">
+                <Card key={index} className="border-0 shadow-gold hover:shadow-gold bg-white/10 backdrop-blur-md border border-white/20 transition-all duration-300 group hover:scale-105">
                   <CardContent className="p-4 text-center">
-                    <comp.icon className="h-8 w-8 text-accent mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                    <h4 className="font-semibold font-poppins text-foreground mb-1">{comp.title}</h4>
-                    <p className="text-xs text-muted-foreground">{comp.desc}</p>
+                    <comp.icon className="h-8 w-8 text-yellow-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                    <h4 className="font-semibold text-white mb-1">{comp.title}</h4>
+                    <p className="text-xs text-white/70">{comp.desc}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -95,10 +98,10 @@ export const AboutSection = () => {
 
           {/* Formation Section */}
           <div className="animate-slide-up">
-            <Card className="border-0 shadow-card bg-card/50 backdrop-blur-sm">
+            <Card className="border-0 shadow-elegant bg-white/10 backdrop-blur-md border border-white/20">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold font-poppins text-foreground mb-6 flex items-center">
-                  <GraduationCap className="h-6 w-6 text-accent mr-3" />
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <GraduationCap className="h-6 w-6 text-yellow-400 mr-3" />
                   Formation Académique
                 </h3>
                 
@@ -106,25 +109,25 @@ export const AboutSection = () => {
                   {formations.map((formation, index) => (
                     <div key={index} className="relative pl-8 pb-6 last:pb-0">
                       {/* Timeline */}
-                      <div className="absolute left-0 top-1 w-4 h-4 bg-accent rounded-full border-4 border-background shadow-md" />
+                      <div className="absolute left-0 top-1 w-4 h-4 bg-yellow-400 rounded-full border-4 border-slate-800 shadow-gold" />
                       {index < formations.length - 1 && (
-                        <div className="absolute left-2 top-5 w-0.5 h-16 bg-border" />
+                        <div className="absolute left-2 top-5 w-0.5 h-16 bg-white/30" />
                       )}
                       
-                      <div className="bg-background/50 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-all duration-300 border border-white/10">
                         <div className="flex items-center gap-2 mb-2">
-                          <Badge variant="secondary" className="text-xs px-2 py-1">
+                          <Badge className="text-xs px-2 py-1 bg-yellow-400/20 text-yellow-400 border-yellow-400/30">
                             {formation.year}
                           </Badge>
-                          <Badge variant="outline" className="text-xs px-2 py-1 border-accent text-accent">
+                          <Badge className="text-xs px-2 py-1 bg-blue-400/20 text-blue-300 border-blue-400/30">
                             {formation.location}
                           </Badge>
                         </div>
-                        <h4 className="font-semibold font-poppins text-foreground">
+                        <h4 className="font-semibold text-white mb-1">
                           {formation.degree}
                         </h4>
-                        <p className="text-sm text-primary font-medium">{formation.field}</p>
-                        <p className="text-sm text-muted-foreground">{formation.school}</p>
+                        <p className="text-sm text-blue-300 font-medium mb-1">{formation.field}</p>
+                        <p className="text-sm text-white/70">{formation.school}</p>
                       </div>
                     </div>
                   ))}

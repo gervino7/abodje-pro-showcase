@@ -35,20 +35,23 @@ export const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-primary">
-      <div className="container px-4">
-        
+    <section className="py-20 bg-gradient-to-br from-indigo-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+      {/* Background Animation */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(120,119,198,0.4),transparent_50%)] animate-pulse-glow" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,215,0,0.2),transparent_50%)]" />
+      
+      <div className="container px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <Badge variant="secondary" className="mb-4 px-4 py-2">
+          <div className="professional-tag inline-flex items-center mb-4">
             <Folder className="h-4 w-4 mr-2" />
             Portfolio
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold font-poppins text-primary-foreground mb-6">
-            Projets <span className="text-accent">Réalisés</span>
+          </div>
+          <h2 className="hero-title text-4xl md:text-5xl text-white mb-6">
+            Projets <span className="text-gradient-gold">Réalisés</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-gold mx-auto rounded-full mb-6" />
-          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto font-roboto">
+          <div className="w-20 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto rounded-full shadow-gold mb-6" />
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Découvrez mes réalisations qui allient innovation technologique et impact business
           </p>
         </div>
@@ -63,32 +66,32 @@ export const ProjectsSection = () => {
           
           {/* Innovation Card */}
           <div className="animate-slide-up" style={{ animationDelay: "0.8s" }}>
-            <div className="bg-gradient-to-br from-accent/20 via-primary/10 to-accent/10 backdrop-blur-sm border border-accent/30 rounded-lg p-8 text-center min-h-[400px] flex flex-col justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(51_100%_50%/0.1),transparent_50%)]" />
-              <Sparkles className="h-12 w-12 text-accent mx-auto mb-4 animate-pulse relative z-10" />
-              <h3 className="text-xl font-bold font-poppins text-primary-foreground mb-3 relative z-10">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-8 text-center min-h-[400px] flex flex-col justify-center relative overflow-hidden hover:scale-105 transition-all duration-300 shadow-elegant">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,215,0,0.2),transparent_50%)]" />
+              <Sparkles className="h-12 w-12 text-yellow-400 mx-auto mb-4 animate-pulse relative z-10" />
+              <h3 className="text-xl font-bold text-white mb-3 relative z-10">
                 Innovation Continue
               </h3>
-              <p className="text-primary-foreground/80 mb-6 relative z-10">
+              <p className="text-white/90 mb-6 relative z-10 text-base">
                 Chaque projet pousse les limites de la créativité et de la technologie pour des résultats exceptionnels
               </p>
-              <Badge variant="outline" className="border-accent text-accent mx-auto relative z-10 bg-background/20">
+              <Badge className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30 mx-auto relative z-10">
                 Excellence Garantie
               </Badge>
             </div>
           </div>
           
           <div className="animate-slide-up" style={{ animationDelay: "1s" }}>
-            <div className="bg-gradient-to-bl from-primary/30 via-accent/10 to-primary/20 backdrop-blur-sm border border-primary/30 rounded-lg p-8 text-center min-h-[400px] flex flex-col justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,hsl(220_100%_50%/0.1),transparent_50%)]" />
-              <Sparkles className="h-12 w-12 text-accent mx-auto mb-4 animate-pulse relative z-10" />
-              <h3 className="text-xl font-bold font-poppins text-primary-foreground mb-3 relative z-10">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-8 text-center min-h-[400px] flex flex-col justify-center relative overflow-hidden hover:scale-105 transition-all duration-300 shadow-elegant">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(120,119,198,0.3),transparent_50%)]" />
+              <Sparkles className="h-12 w-12 text-blue-300 mx-auto mb-4 animate-pulse relative z-10" />
+              <h3 className="text-xl font-bold text-white mb-3 relative z-10">
                 Solutions sur Mesure  
               </h3>
-              <p className="text-primary-foreground/80 mb-6 relative z-10">
+              <p className="text-white/90 mb-6 relative z-10 text-base">
                 Développement personnalisé selon vos besoins spécifiques et votre vision unique
               </p>
-              <Badge variant="outline" className="border-accent text-accent mx-auto relative z-10 bg-background/20">
+              <Badge className="bg-blue-400/20 text-blue-300 border-blue-400/30 mx-auto relative z-10">
                 100% Personnalisé
               </Badge>
             </div>
