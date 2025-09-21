@@ -81,7 +81,7 @@ export const ChatBot = () => {
       {/* Chat Toggle Button */}
       <Button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-20 right-6 z-50 w-14 h-14 rounded-full shadow-gold bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-300 ${
+        className={`fixed bottom-20 right-6 z-50 w-14 h-14 rounded-full shadow-lg shadow-purple-500/30 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all duration-300 ${
           isOpen ? 'scale-0' : 'scale-100'
         }`}
       >
@@ -94,12 +94,12 @@ export const ChatBot = () => {
           isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
         }`}
       >
-        <Card className="h-full bg-background/95 backdrop-blur-lg border-accent/20 shadow-gold">
-          <CardHeader className="pb-3 bg-gradient-hero rounded-t-lg">
+        <Card className="h-full bg-background/95 backdrop-blur-lg border-purple-300/30 shadow-lg shadow-purple-500/10">
+          <CardHeader className="pb-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 rounded-t-lg">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Bot className="h-5 w-5 text-accent" />
-                <CardTitle className="text-sm text-primary-foreground">
+                <Bot className="h-5 w-5 text-white" />
+                <CardTitle className="text-sm text-white">
                   Assistant Konan
                 </CardTitle>
               </div>
@@ -107,7 +107,7 @@ export const ChatBot = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(false)}
-                className="text-primary-foreground hover:bg-white/10"
+                className="text-white hover:bg-white/10"
               >
                 <X className="h-4 w-4" />
               </Button>
@@ -128,8 +128,8 @@ export const ChatBot = () => {
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center ${
                         message.sender === 'user'
-                          ? 'bg-accent text-accent-foreground'
-                          : 'bg-primary text-primary-foreground'
+                          ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+                          : 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
                       }`}
                     >
                       {message.sender === 'user' ? (
@@ -141,8 +141,8 @@ export const ChatBot = () => {
                     <div
                       className={`max-w-[280px] p-3 rounded-lg text-sm ${
                         message.sender === 'user'
-                          ? 'bg-accent text-accent-foreground ml-auto'
-                          : 'bg-muted text-muted-foreground'
+                          ? 'bg-gradient-to-r from-blue-50 to-purple-50 text-blue-900 border border-blue-200/50 ml-auto'
+                          : 'bg-gradient-to-r from-purple-50 to-indigo-50 text-purple-900 border border-purple-200/50'
                       }`}
                     >
                       {message.content}
@@ -151,14 +151,14 @@ export const ChatBot = () => {
                 ))}
                 {isLoading && (
                   <div className="flex items-start gap-2">
-                    <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white flex items-center justify-center">
                       <Bot className="h-4 w-4" />
                     </div>
-                    <div className="bg-muted text-muted-foreground p-3 rounded-lg text-sm">
+                    <div className="bg-gradient-to-r from-purple-50 to-indigo-50 text-purple-900 border border-purple-200/50 p-3 rounded-lg text-sm">
                       <div className="flex gap-1">
-                        <div className="w-2 h-2 bg-current rounded-full animate-bounce" />
-                        <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
-                        <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+                        <div className="w-2 h-2 bg-purple-600 rounded-full animate-bounce" />
+                        <div className="w-2 h-2 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
+                        <div className="w-2 h-2 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
                       </div>
                     </div>
                   </div>
@@ -181,7 +181,7 @@ export const ChatBot = () => {
                   onClick={sendMessage} 
                   disabled={!input.trim() || isLoading}
                   size="sm"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0"
                 >
                   <Send className="h-4 w-4" />
                 </Button>

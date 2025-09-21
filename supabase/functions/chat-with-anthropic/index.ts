@@ -34,10 +34,9 @@ serve(async (req) => {
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-3-5-sonnet-20241022',
-        max_tokens: 1000,
-        temperature: 0.7,
-        system: `Tu es un assistant personnel de Konan Abodje Inde Gervais, informaticien professionnel chez D&G CONSEIL. 
+        model: 'claude-sonnet-4-20250514',
+        max_completion_tokens: 1000,
+        system: `Tu es un assistant personnel de Konan Abodje Inde Gervais, informaticien professionnel chez D&G CONSEIL.
 
 Voici les informations sur Konan :
 - Nom complet : KONAN Abodje Inde GERVAIS
