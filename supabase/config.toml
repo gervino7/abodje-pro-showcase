@@ -1,1 +1,7 @@
 project_id = "yfgzimeqwzfpwdwjnxxc"
+
+[functions.chat-with-anthropic]
+verify_jwt = false
+
+[functions.create-appointment]
+verify_jwt = false

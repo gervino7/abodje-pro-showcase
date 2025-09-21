@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin, Linkedin, Github, MessageCircle } from "lucide-react";
-import { CalendlyScheduler } from "@/components/CalendlyScheduler";
+import { BookingForm } from "@/components/BookingForm";
 
 export const ContactSection = () => {
   const contactInfo = [
@@ -119,9 +119,9 @@ export const ContactSection = () => {
             </Card>
           </div>
 
-          {/* Calendly Scheduler */}
+          {/* Booking Form */}
           <div className="animate-slide-up">
-            <CalendlyScheduler />
+            <BookingForm />
           </div>
         </div>
 
