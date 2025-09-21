@@ -8,14 +8,14 @@ export const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "konan.abodje@dgconseil.ci",
-      link: "mailto:konan.abodje@dgconseil.ci"
+      value: "inddger7@gmail.com",
+      link: "mailto:inddger7@gmail.com"
     },
     {
       icon: Phone, 
       label: "Téléphone",
-      value: "+225 07 XX XX XX XX",
-      link: "tel:+22507XXXXXXXX"
+      value: "+225 05 06 80 31 13",
+      link: "tel:+2250506803113"
     },
     {
       icon: MapPin,
