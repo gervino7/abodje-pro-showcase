@@ -1,6 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Folder, Sparkles } from "lucide-react";
+import ivoireRizImage from "@/assets/ivoire-riz-project.jpg";
+import ongAemImage from "@/assets/ong-aem-project.jpg";
+import formationProImage from "@/assets/formation-pro-project.jpg";
+import jblCampaignImage from "@/assets/jbl-campaign-project.jpg";
 
 export const ProjectsSection = () => {
   const projects = [
@@ -9,28 +13,28 @@ export const ProjectsSection = () => {
       description: "Plateforme e-commerce premium pour le riz local ivoirien. 15+ années d'expérience, 500+ partenaires distributeurs, production de 10K+ tonnes/an. Valorisation du patrimoine agricole avec innovation technologique.",
       technologies: ["E-commerce", "React", "Node.js", "WhatsApp Business", "Gestion Stocks", "B2B/B2C"],
       link: "https://ivoireriz.abodje.com/",
-      image: "/placeholder.svg"
+      image: ivoireRizImage
     },
     {
       title: "ONG-AEM",
       description: "\"L'Amour en Manifestation\" - Plateforme humanitaire dédiée à l'assistance aux populations démunies de RDC. Mission d'aide alimentaire, santé, éducation et soutien communautaire avec transparence totale.",
       technologies: ["React", "CMS", "Donations", "Responsive Design", "Multi-langues", "Humanitarian"],
       link: "https://ong-aem.abodje.com/",
-      image: "/placeholder.svg"
+      image: ongAemImage
     },
     {
       title: "Formation Pro CEFP-DA",
       description: "Plateforme de formation entrepreneuriale révolutionnaire. Transformez vos ressources en activité génératrice de revenus en 2 jours. Programme clé en main avec méthode éprouvée et outils pratiques.",
       technologies: ["Formation", "React", "Landing Page", "Countdown Timer", "Booking System", "EdTech"],
       link: "https://formationpro.abodje.com/",
-      image: "/placeholder.svg"
+      image: formationProImage
     },
     {
       title: "Jean Louis Billon 2025",
       description: "Site de campagne présidentielle officiel pour JBL 2025. Plateforme politique moderne présentant le \"Plan B pour la Côte d'Ivoire\", galerie photos, countdown électoral et engagement citoyen.",
       technologies: ["Political Campaign", "React", "Galerie", "Countdown", "Booking RDV", "Interactive"],
       link: "https://jbl.abodje.com/",
-      image: "/placeholder.svg"
+      image: jblCampaignImage
     }
   ];
 
