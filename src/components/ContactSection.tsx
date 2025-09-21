@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin, Linkedin, Github, MessageCircle } from "lucide-react";
+import { CalendlyScheduler } from "@/components/CalendlyScheduler";
 
 export const ContactSection = () => {
   const contactInfo = [
@@ -50,7 +51,7 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           
           {/* Contact Info */}
           <div className="animate-slide-up">
@@ -100,51 +101,64 @@ export const ContactSection = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* CTA Buttons */}
+                <div className="mt-8 pt-6 border-t border-border">
+                  <div className="space-y-3">
+                    <Button variant="default" size="lg" className="w-full group">
+                      <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                      Envoyer un Email
+                    </Button>
+                    <Button variant="outline" size="lg" className="w-full">
+                      <Phone className="h-5 w-5" />
+                      Appeler Maintenant
+                    </Button>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* CTA Section */}
+          {/* Calendly Scheduler */}
           <div className="animate-slide-up">
-            <Card className="border-0 shadow-gold bg-gradient-hero text-primary-foreground overflow-hidden relative">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(51_100%_50%/0.1),transparent_50%)]" />
-              <CardContent className="p-8 relative z-10">
-                <h3 className="text-2xl font-bold font-poppins mb-6">
-                  Démarrons votre Projet
-                </h3>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-accent rounded-full" />
-                    <p className="text-primary-foreground/90">Consultation gratuite</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-accent rounded-full" />
-                    <p className="text-primary-foreground/90">Devis personnalisé</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-accent rounded-full" />
-                    <p className="text-primary-foreground/90">Accompagnement complet</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-accent rounded-full" />
-                    <p className="text-primary-foreground/90">Solutions sur mesure</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <Button variant="hero" size="lg" className="w-full group">
-                    <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                    Envoyer un Email
-                  </Button>
-                  <Button variant="outline" size="lg" className="w-full border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                    <Phone className="h-5 w-5" />
-                    Programmer un Appel
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <CalendlyScheduler />
           </div>
+        </div>
+
+        {/* Benefits Section */}
+        <div className="mt-16 max-w-4xl mx-auto">
+          <Card className="border-0 shadow-gold bg-gradient-hero text-primary-foreground overflow-hidden relative">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(51_100%_50%/0.1),transparent_50%)]" />
+            <CardContent className="p-8 relative z-10">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold font-poppins mb-4">
+                  Pourquoi Choisir Nos Services ?
+                </h3>
+                <p className="text-primary-foreground/80 font-roboto">
+                  Découvrez les avantages de travailler avec un expert
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-accent rounded-full flex-shrink-0" />
+                  <p className="text-primary-foreground/90">Consultation gratuite de 30 minutes</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-accent rounded-full flex-shrink-0" />
+                  <p className="text-primary-foreground/90">Devis détaillé et personnalisé</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-accent rounded-full flex-shrink-0" />
+                  <p className="text-primary-foreground/90">Accompagnement de A à Z</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-accent rounded-full flex-shrink-0" />
+                  <p className="text-primary-foreground/90">Solutions innovantes sur mesure</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
