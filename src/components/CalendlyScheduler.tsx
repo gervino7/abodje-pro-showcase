@@ -15,30 +15,63 @@ export const CalendlyScheduler = ({
   const calendlyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Charger le script Calendly
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
+    // Vérifier si le script Calendly est déjà chargé
+    const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+    
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      script.onload = () => {
+        // Cacher le fallback une fois le script chargé
+        const fallback = document.getElementById('calendly-fallback');
+        if (fallback) {
+          fallback.style.display = 'none';
+        }
+        // Initialiser le widget
+        initializeWidget();
+      };
+      document.body.appendChild(script);
+    } else {
+      // Script déjà chargé, initialiser directement
+      setTimeout(initializeWidget, 100);
+    }
 
     return () => {
-      // Nettoyer le script lors du démontage
-      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
-      if (existingScript) {
-        document.body.removeChild(existingScript);
-      }
+      // Pas de nettoyage automatique pour éviter les conflits
     };
   }, []);
 
-  useEffect(() => {
-    // Initialiser le widget Calendly
+  const initializeWidget = () => {
     if (calendlyRef.current && (window as any).Calendly) {
+      // Nettoyer le contenu précédent
+      calendlyRef.current.innerHTML = '';
+      
+      // Initialiser le widget Calendly avec configuration avancée
       (window as any).Calendly.initInlineWidget({
         url: url,
         parentElement: calendlyRef.current,
-        prefill: {},
-        utm: {}
+        prefill: {
+          // Pré-remplir avec des données du site si disponibles
+        },
+        utm: {
+          utmSource: 'website',
+          utmMedium: 'inline_widget'
+        }
       });
+      
+      // Cacher le fallback une fois initialisé
+      const fallback = document.getElementById('calendly-fallback');
+      if (fallback) {
+        fallback.style.display = 'none';
+      }
+    }
+  };
+
+  useEffect(() => {
+    // Initialiser le widget si Calendly est déjà disponible
+    if ((window as any).Calendly) {
+      initializeWidget();
     }
   }, [url]);
 
@@ -85,19 +118,15 @@ export const CalendlyScheduler = ({
               }}
             />
             
-            {/* Fallback pour le cas où Calendly ne charge pas */}
-            <div className="absolute inset-0 flex items-center justify-center bg-card/80 backdrop-blur-sm" id="calendly-fallback">
+            {/* Loader intégré pendant le chargement */}
+            <div className="absolute inset-0 flex items-center justify-center bg-card/95 backdrop-blur-sm transition-all duration-500" id="calendly-fallback">
               <div className="text-center p-8">
-                <Calendar className="h-16 w-16 text-primary mx-auto mb-4 opacity-50" />
-                <p className="text-muted-foreground mb-4">Chargement du calendrier...</p>
-                <a 
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:text-accent transition-colors underline"
-                >
-                  Ouvrir Calendly dans un nouvel onglet
-                </a>
+                <div className="relative">
+                  <Calendar className="h-16 w-16 text-primary mx-auto mb-4 animate-pulse" />
+                  <div className="absolute inset-0 h-16 w-16 mx-auto border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                </div>
+                <p className="text-muted-foreground mb-2 font-medium">Préparation de votre calendrier...</p>
+                <p className="text-xs text-muted-foreground/70">Intégration directe sans redirection</p>
               </div>
             </div>
           </div>
