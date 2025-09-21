@@ -14,7 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contacts: {
+        Row: {
+          calendly_event_uri: string | null
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          name: string
+          preferred_date: string | null
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          calendly_event_uri?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          preferred_date?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          calendly_event_uri?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          preferred_date?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
