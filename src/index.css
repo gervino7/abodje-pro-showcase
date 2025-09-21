@@ -115,3 +115,293 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hero Section Animations & Styles */
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes orbital {
+  0% {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes orbit {
+  100% {
+    transform: 
+      translate(-50%, -50%) 
+      rotate(calc(var(--orbit-angle) + 360deg)) 
+      translateX(180px) 
+      rotate(calc(-1 * (var(--orbit-angle) + 360deg)));
+  }
+}
+
+@keyframes explode {
+  0% {
+    transform: rotate(var(--angle)) translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateX(100px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Floating Particles */
+.particle-float {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 215, 0, 0.6);
+  border-radius: 50%;
+  animation: float-up linear infinite;
+}
+
+/* Luminous Orbs */
+.orb-luminous {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+  filter: blur(1px);
+  animation: orbital 20s linear infinite;
+}
+
+/* Professional Tag */
+.professional-tag {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #FFD700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  padding: 12px 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 25px;
+}
+
+/* Hero Title */
+.hero-title {
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 800;
+  line-height: 0.9;
+  font-family: 'Poppins', sans-serif;
+}
+
+.typing-animation {
+  display: inline-block;
+  background: linear-gradient(45deg, #fff, #FFD700, #fff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Company Name */
+.company-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.highlight-gradient {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* CTA Buttons */
+.cta-primary {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #000;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.cta-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.6);
+  color: #000;
+}
+
+.cta-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Profile Container */
+.profile-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.profile-bg-rotate {
+  position: absolute;
+  inset: -20px;
+  background: conic-gradient(from 0deg, #FFD700, #FFA500, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4, #FFEAA7, #FFD700);
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
+  opacity: 0.7;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+/* Skills Orbit */
+.skills-orbit {
+  position: absolute;
+  inset: -60px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.skill-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #FFD700;
+  transform-origin: 0 0;
+  animation: orbit 15s linear infinite;
+  transform: 
+    translate(-50%, -50%) 
+    rotate(var(--orbit-angle)) 
+    translateX(180px) 
+    rotate(calc(-1 * var(--orbit-angle)));
+}
+
+/* Particle Explosion */
+.particle-explosion {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #FFD700;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: explode 1s ease-out forwards;
+  transform: rotate(var(--angle)) translateX(0);
+}
