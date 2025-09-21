@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ContactSection } from "@/components/ContactSection";
+import { ChatBot } from "@/components/ChatBot";
 
 const Index = () => {
   return (
@@ -10,6 +11,7 @@ const Index = () => {
       <AboutSection />
       <ProjectsSection />
       <ContactSection />
+      <ChatBot />
       
       {/* Footer */}
       <footer className="bg-primary py-8 border-t border-primary-light">
